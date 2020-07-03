@@ -1,10 +1,12 @@
 import React from 'react';
 
+import './card-style.css';
+
 // * Note : This card component will receive single magician info as props
 
 export const Card = (props) => {
     return (
-        <div>
+        <div className="card">
             <img src={props.mag.image} alt={props.mag.name} height="200px" width="200px" />
             <h2>{ props.mag.name }</h2>
             <h3>House : {props.mag.house}</h3>

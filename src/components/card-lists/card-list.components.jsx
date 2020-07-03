@@ -10,7 +10,7 @@ export const CardList = (props) => {
 
     return (
         // <div className="card-list">{props.children}</div>
-        <div>
+        <div className="card-list">
               {
                     props.magicians.map((mag, index) => {
                         return <Card key={index} mag={mag} />                     // ! mag here is single magician info object
