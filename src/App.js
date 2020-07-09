@@ -21,9 +21,15 @@ class App extends Component {
   componentDidMount() {
     const api = "http://hp-api.herokuapp.com/api/characters";
 
+    // const api = "http://localhost:3000/api/v1/wizards";
+
     fetch(api)
       .then((response) => response.json())
       .then(data => this.setState({magicians : data}))
+  }
+
+  handleChange = (e) => {
+    this.setState({searchField: e.target.value});
   }
 
 
@@ -37,10 +43,9 @@ class App extends Component {
       return (
         <div className="App">
           
-
           <SearchBox  
                 placeholder="search favourite wizard ..." 
-                handleChange={ e => this.setState({searchField: e.target.value})}
+                handleChange={this.handleChange}
            />
           <CardList magicians={filteredMagicians} />
         </div>
